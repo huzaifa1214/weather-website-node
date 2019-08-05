@@ -13,8 +13,8 @@ const weatherPred = (longitude, latitude, callback) => {
     } else if (body.error) {
       callback("Cannot find the location.Try Again!", undefined);
     } else {
-     
-      callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. There is a ' + body.currently.precipProbability + '% chance of rain.');
+      
+      callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. High Temperature will be: '+body.daily.data[0].temperatureHigh+' and Low Temperature will be '+body.daily.data[0].temperatureLow+' today.There is a ' + body.currently.precipProbability + '% chance of rain.');
     }
   });
 };
